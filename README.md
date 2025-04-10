@@ -4,9 +4,13 @@
 - Bibliothèque statique : `.lib`
 - Bibliothèque dynamique/partagée : `.dll`
 
+<br /><br /><br /><br />
+
 ## Architecture supportée :
 - Windows x64
 - Windows arm64
+
+<br /><br /><br /><br />
 
 ## 📦 Documentation des dépendances
 
@@ -17,6 +21,8 @@
 ⚠️ OpenSSL : Il faut lier `libssl-static.lib` **avant** `libcrypto-static.lib`.
 
 ---
+
+<br /><br /><br /><br />
 
 ### Informations TRES IMPORTANT - Libraries / Executable :
 
@@ -43,6 +49,8 @@ dumpbin /dependents path\to\myblib.dll
 ```
 
 ---
+
+<br /><br /><br /><br />
 
 ## Documentation pour construire les librairies, permet de récupérer les .h / .a / .so des librairies (pour mettre à jour les librairies si il faut) :
 
