@@ -6,11 +6,13 @@
 
 <br /><br /><br /><br />
 
+
 ## Architecture supportée :
 - Windows x64
 - Windows arm64
 
 <br /><br /><br /><br />
+
 
 ## 📦 Documentation des dépendances
 
@@ -20,9 +22,8 @@
 
 ⚠️ OpenSSL : Il faut lier `libssl-static.lib` **avant** `libcrypto-static.lib`.
 
----
-
 <br /><br /><br /><br />
+
 
 ### Informations TRES IMPORTANT - Libraries / Executable :
 
@@ -48,7 +49,6 @@ dumpbin /exports path\to\mylib.dll
 dumpbin /dependents path\to\myblib.dll
 ```
 
----
 
 <br /><br /><br /><br />
 
