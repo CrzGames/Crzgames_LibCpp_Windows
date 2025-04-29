@@ -44,7 +44,7 @@ SDL2_mixer :
 
 OpenSSL : 
   1. dossier include (openssl) -> à linker
-  2. libcrypto_static.lib, libssl_static.lib, Crypt32 (Bibliothèque native à Windows) -> à linker
+  2. libcrypto_static.lib, libssl_static.lib, Crypt32 (Bibliothèque native à Windows), ws2_32 (Bibliothèque native à Windows) -> à linker
   
 <br /><br /><br /><br />
 
