@@ -186,7 +186,7 @@ call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build
 # Pour Windows x64 (depuis un hôte Windows x64)
 mkdir ..\openssl-windows\x64\include
 mkdir ..\openssl-windows\x64\lib
-perl Configure VC-WIN64A --prefix=%CD%\..\openssl-windows\x64
+perl Configure VC-WIN64A no-shared --prefix=%CD%\..\openssl-windows\x64
 nmake
 nmake install
 nmake clean
@@ -196,7 +196,7 @@ nmake clean
 cd openssl-src
 mkdir ..\openssl-windows\arm64\include
 mkdir ..\openssl-windows\arm64\lib
-perl Configure VC-CLANG-WIN64-CLANGASM-ARM --prefix=%CD%\..\openssl-windows\arm64
+perl Configure VC-CLANG-WIN64-CLANGASM-ARM no-shared --prefix=%CD%\..\openssl-windows\arm64
 nmake
 nmake install
 nmake clean
