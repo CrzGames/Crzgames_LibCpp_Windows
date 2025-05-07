@@ -157,8 +157,8 @@ choco install strawberryperl -y
 5. Assurez-vous que Perl et NASM sont tous deux sur votre %PATH%.
 6. Ouvrir l'invite de commande de Visual Studio Developer avec des privilèges d'administrateur, puis executer :
 ```bash
-# Sur un hôte Windows x64, quand ouvre le l'invite de commande Visual Studio Developer c'est :
-# vcvars32.bat, qui est lancer.
+# Sur un hôte Windows x64, quand on ouvre l'invite de commande Visual Studio Developer c'est :
+# vcvars32.bat, qui est lancer de base.
 
 # Fichier de commandes - Architectures hôte et cible
 # vcvars32.bat	Utilisent les outils natifs x86 32 bits pour générer du code x86 32 bits.
