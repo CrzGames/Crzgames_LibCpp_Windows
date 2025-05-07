@@ -159,10 +159,15 @@ choco install strawberryperl -y
 ```bash
 # Sur un hôte Windows x64, c'est vcvars32.bat de base !
 
-# Architecture cible	Commande à exécuter
-# x64	                vcvars64.bat
-# x86	                vcvars32.bat
-# ARM64	              vcvarsamd64_arm64.bat
+# Fichier de commandes - Architectures hôte et cible
+# vcvars32.bat	Utilisent les outils natifs x86 32 bits pour générer du code x86 32 bits.
+# vcvars64.bat	Utilisent les outils natifs x64 64 bits pour générer du code x64 64 bits.
+# vcvarsx86_amd64.bat	Utilisent les outils croisés natifs x86 32 bits pour générer du code x64 64 bits.
+# vcvarsamd64_x86.bat	Utilisent les outils croisés natifs x64 64 bits pour générer du code x86 32 bits.
+# vcvarsx86_arm.bat	Utilisent les outils croisés natifs x86 32 bits pour générer du code ARM.
+# vcvarsamd64_arm.bat	Utilisent les outils croisés natifs x64 64 bits pour générer du code ARM.
+# vcvarsx86_arm64.bat	Utilisez les outils croisés natifs x86 32 bits pour générer du code ARM64.
+# vcvarsamd64_arm64.bat	Utilisez les outils croisés natifs x64 64 bits pour générer du code ARM64.
 
 # Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows x64 il faut faire :
 call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
