@@ -174,12 +174,14 @@ choco install strawberryperl -y
 # vcvarsx86_arm64.bat	Utilisez les outils croisés natifs x86 32 bits pour générer du code ARM64.
 # vcvarsamd64_arm64.bat	Utilisez les outils croisés natifs x64 64 bits pour générer du code ARM64.
 
+# Changer le PATH si c'est VS2024 ensuite ou si c'est sois VS COMMUNITY/ENTREPRISE
+
 # Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows x64 depuis un hôte x64 :
-call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" amd64
+call "%ProgramFiles%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
 # Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows ARM64 depuis un hôte ARM64 :
-call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" arm64
+call "%ProgramFiles%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" arm64
 # Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows ARM64 depuis un hôte x64 :
-call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" amd64_arm64
+call "%ProgramFiles%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64_arm64
 ```
 8. Toujours dans l'invite de commande de Visual Studio Developer :
 ```bash
