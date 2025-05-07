@@ -141,16 +141,51 @@ RCENet :
 3. Récupérer la librairie (rcenet.lib) depuis le dossier : ./windows/arch/lib/ du dossier télécharger précédemment <br /><br />
 
 OpenSSL :
-1. Aller sur la page : https://slproweb.com/products/Win32OpenSSL.html
-2. Télécharger la dernière version latest (complète et non juste 'light'), via le fichier .msi (le faire pour x64 et x86, ce sont deux .msi diffèrent)
-3. Lancer le fichier .msi, faite la procèdure d'installation puis aller récupérer depuis : <br />
-   Pour la version x64 : C:\Program Files\OpenSSL-Win64  <br />
-   Pour la version x86 : C:\Program Files (x86)\OpenSSL-Win32
-4. Récupérer le dossier include de OpenSSL depuis : C:\Program Files\OpenSSL-Win64\include\openssl OU C:\Program Files (x86)\OpenSSL-Win32\include\openssl
-5. Récupérer les librairies (.lib) pour x64/x86 ET Debug/Release : <br />
-   Debug : C:\Program Files (x86)\OpenSSL-Win32\lib\VC\x86\MDd et C:\Program Files\OpenSSL-Win64\include\openssl\lib\VC\x64\MDd <br />
-   Release : C:\Program Files (x86)\OpenSSL-Win32\lib\VC\x86\MD et C:\Program Files\OpenSSL-Win64\include\openssl\lib\VC\x64\MD
-6. Récupérer seulement les deux lib static (.lib) : libcrypto_static.lib et libssl_static.lib
+1. Ouvrir le PowerShell en administrateur.
+2. Installer le package manager Chocolatey via cette commande dans PowerShell puis faire "ENTER" :
+```bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+3. Installer NASM via Chocolate via cette commande dans PowerShell puis faire "ENTER" :
+```bash
+choco install nasm -y
+```
+4. Installer Perl (Strawberry Perl) via Chocolate via cette commande dans PowerShell puis faire "ENTER" :
+```bash
+choco install strawberryperl -y
+```
+5. Assurez-vous que Perl et NASM sont tous deux sur votre %PATH%.
+6. Ouvrir l'invite de commande de Visual Studio Developer avec des privilèges d'administrateur, puis executer :
+```bash
+# Sur un hôte Windows x64, c'est vcvars32.bat de base !
+
+# Architecture cible	Commande à exécuter
+# x64	                vcvars64.bat
+# x86	                vcvars32.bat
+# ARM64	              vcvarsamd64_arm64.bat
+
+# Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows x64 il faut faire :
+call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+```
+7. Toujours dans l'invite de commande de Visual Studio Developer :
+```bash
+# Pour Windows x64 (depuis un hôte Windows x64)
+mkdir ..\openssl-windows\x64\include
+mkdir ..\openssl-windows\x64\lib
+perl Configure VC-WIN64A --prefix=%CD%\..\openssl-windows\x64
+nmake
+nmake install
+nmake clean
+
+# Pour Windows ARM64 (depuis un hôte Windows ARM64)
+cd openssl-src
+mkdir ..\openssl-windows\arm64\include
+mkdir ..\openssl-windows\arm64\lib
+perl Configure VC-CLANG-WIN64-CLANGASM-ARM --prefix=%CD%\..\openssl-windows\arm64
+nmake
+nmake install
+nmake clean
+```
 
 <br /><br /><br /><br />
 
