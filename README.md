@@ -166,6 +166,8 @@ choco install strawberryperl -y
 
 # Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows x64 il faut faire :
 call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+# Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows ARM64 il faut faire :
+call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsamd64_arm64.bat"
 ```
 7. Toujours dans l'invite de commande de Visual Studio Developer :
 ```bash
