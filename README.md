@@ -178,6 +178,7 @@ nmake install
 nmake clean
 
 # Pour Windows ARM64 (depuis un hôte Windows ARM64)
+# Spécifiquement pour Windows ARM64, il faut aussi installer avant : LLVM/clang
 cd openssl-src
 mkdir ..\openssl-windows\arm64\include
 mkdir ..\openssl-windows\arm64\lib
