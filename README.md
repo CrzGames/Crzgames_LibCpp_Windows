@@ -155,7 +155,11 @@ choco install nasm -y
 choco install strawberryperl -y
 ```
 5. Assurez-vous que Perl et NASM sont tous deux sur votre %PATH%.
-6. Ouvrir l'invite de commande de Visual Studio Developer avec des privilèges d'administrateur, puis executer :
+6. Ouvrir l'invite de commande de "Visual Studio Developer", à partir du cmd.exe par exemple, executer cette commande :
+```bash
+"%ProgramFiles%\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat"
+```
+7. Depuis l'invite de commande de "Visual Studio Developer" :
 ```bash
 # Sur un hôte Windows x64, quand on ouvre l'invite de commande Visual Studio Developer c'est :
 # vcvars32.bat, qui est lancer de base.
@@ -177,7 +181,7 @@ call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build
 # Remplacer à la fin le nom du .bat en fonction de ce qu'ont veut faire, si on veut build OpenSSL pour Windows ARM64 depuis un hôte x64 :
 call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsamd64_arm64.bat"
 ```
-7. Toujours dans l'invite de commande de Visual Studio Developer :
+8. Toujours dans l'invite de commande de Visual Studio Developer :
 ```bash
 # Pour Windows x64 (depuis un hôte Windows x64)
 mkdir ..\openssl-windows\x64\include
